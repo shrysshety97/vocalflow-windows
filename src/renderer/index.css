@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --bg-color: #0b0f19;
+  --panel-bg: rgba(255, 255, 255, 0.05);
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --border-color: rgba(255,255,255,0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  background-image: radial-gradient(circle at 50% -20%, #172554, transparent 50%);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: fade-in 0.8s ease-out;
+}
+
+.card {
+  background: var(--panel-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+  animation: slide-up 0.6s ease-out backwards;
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.value {
+  font-weight: 600;
+  color: var(--text-main);
+  background: rgba(255,255,255,0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.info-note {
+  font-size: 0.85rem;
+  color: #a78bfa;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  animation: fade-in 1s ease-out;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.4));
+  border-radius: 20px;
+}
+
+h3 {
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 3rem;
+  opacity: 0.5;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
